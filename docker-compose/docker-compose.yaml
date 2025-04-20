@@ -19,7 +19,6 @@ services:
     networks:
       custom_net:
         ipv4_address: 192.168.1.14
-      default:
       bumper:
     ports:
       - 443:443
@@ -43,7 +42,7 @@ services:
       PGID: 1000
       TZ: America/Phoenix
       BUMPER_ANNOUNCE_IP: 192.168.1.14 # Insert your IP
-      BUMPER_LISTEN: 0.0.0.0
+      BUMPER_LISTEN: 192.168.1.14
       # BUMPER_DEBUG: "true"
       LOG_TO_STDOUT: "true"
     volumes:
