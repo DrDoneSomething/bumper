@@ -42,7 +42,7 @@ services:
       PGID: 1000
       TZ: America/Phoenix
       BUMPER_ANNOUNCE_IP: 192.168.1.14 # Insert your IP
-      BUMPER_LISTEN: 0.0.0.0
+      BUMPER_LISTEN: 192.168.1.14
       # BUMPER_DEBUG: "true"
       LOG_TO_STDOUT: "true"
     volumes:
