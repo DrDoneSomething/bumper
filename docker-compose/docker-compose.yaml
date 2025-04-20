@@ -4,6 +4,12 @@ version: "3.6"
 networks:
   bumper:
     internal: true
+  custom_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
+          gateway: 192.168.1.1
 
 services:
   nginx:
@@ -44,11 +50,3 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./config:/bumper/data
       - ./certs:/bumper/certs
-
-networks:
-  custom_net:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 192.168.1.0/24
-          gateway: 192.168.1.1
