@@ -4,6 +4,8 @@ version: "3.6"
 networks:
   bumper:
     internal: true
+  MyMacVLAN:
+    external: true
 
 services:
   nginx:
