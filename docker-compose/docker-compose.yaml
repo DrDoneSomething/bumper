@@ -4,12 +4,6 @@ version: "3.6"
 networks:
   bumper:
     internal: true
-  custom_net:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 192.168.1.0/24
-          gateway: 192.168.1.1
 
 services:
   nginx:
@@ -17,8 +11,7 @@ services:
       - bumper
     image: nginx:alpine
     networks:
-      custom_net:
-        ipv4_address: 192.168.1.14
+      default:
       bumper:
     ports:
       - 443:443
@@ -40,9 +33,9 @@ services:
     environment:
       PUID: 1000
       PGID: 1000
-      TZ: America/Phoenix
-      BUMPER_ANNOUNCE_IP: 192.168.1.14 # Insert your IP
-      BUMPER_LISTEN: 192.168.1.14
+      TZ: Europe/Rome
+      BUMPER_ANNOUNCE_IP: XXX # Insert your IP
+      BUMPER_LISTEN: 0.0.0.0
       # BUMPER_DEBUG: "true"
       LOG_TO_STDOUT: "true"
     volumes:
