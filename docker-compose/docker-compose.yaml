@@ -11,7 +11,7 @@ services:
       - bumper
     image: nginx:alpine
     networks:
-      default:
+      MyMacVLAN:
       bumper:
     ports:
       - 443:443
@@ -33,10 +33,10 @@ services:
     environment:
       PUID: 1000
       PGID: 1000
-      TZ: Europe/Rome
-      BUMPER_ANNOUNCE_IP: XXX # Insert your IP
+      TZ: America/Phoenix
+      BUMPER_ANNOUNCE_IP: 192.168.1.2 # Insert your IP
       BUMPER_LISTEN: 0.0.0.0
-      # BUMPER_DEBUG: "true"
+      BUMPER_DEBUG: "true"
       LOG_TO_STDOUT: "true"
     volumes:
       - /etc/timezone:/etc/timezone:ro
