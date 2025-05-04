@@ -12,7 +12,6 @@ services:
     image: nginx:alpine
     networks:
       default:
-        name: MyMacVLAN
       bumper:
     ports:
       - 443:443
