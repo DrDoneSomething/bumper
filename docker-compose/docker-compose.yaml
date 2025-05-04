@@ -4,6 +4,7 @@ version: "3.6"
 networks:
   bumper:
     internal: true
+  MyMacVLAN:
 
 services:
   nginx:
@@ -11,7 +12,7 @@ services:
       - bumper
     image: nginx:alpine
     networks:
-      default:
+      MyMacVLAN:
       bumper:
     ports:
       - 443:443
