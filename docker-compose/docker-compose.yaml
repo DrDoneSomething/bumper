@@ -5,6 +5,7 @@ networks:
   bumper:
     internal: true
   MyMacVLAN:
+    external: true
 
 services:
   nginx:
